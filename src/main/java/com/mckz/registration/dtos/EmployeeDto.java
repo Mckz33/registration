@@ -1,43 +1,30 @@
-package com.mckz.registration.models;
+package com.mckz.registration.dtos;
 
-import javax.persistence.*;
 import java.util.UUID;
 
-@Entity
-@Table(name = "employee")
-public class EmployeeModel {
+public class EmployeeDto {
 
-    @Id
-    @Column(name = "employee_id", length = 45)
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private UUID id;
+    private UUID employeeid;
 
-    @Column(name = "employee_name", length = 45)
     private String employeeName;
 
-    @Column(name = "address", length = 45)
     private String address;
 
-    @Column(name = "mobile", length = 45)
     private int mobile;
 
-    public EmployeeModel(UUID id, String employeeName, String address, int mobile) {
-        this.id = id;
+    public EmployeeDto(UUID employeeid, String employeeName, String address, int mobile) {
+        this.employeeid = employeeid;
         this.employeeName = employeeName;
         this.address = address;
         this.mobile = mobile;
     }
 
-    public EmployeeModel() {
-
+    public UUID getEmployeeid() {
+        return employeeid;
     }
 
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
+    public void setEmployeeid(UUID employeeid) {
+        this.employeeid = employeeid;
     }
 
     public String getEmployeeName() {
